@@ -2,6 +2,7 @@ import React from "react";
 import {Routes, Route, useNavigate, Navigate} from 'react-router-dom';
 import Login from "./Login";
 import Sign_up from "./Sign-up";
+import Layout from "./Layout";
 
 
 
@@ -18,7 +19,7 @@ function Home() {
     }
 
     return (
-        <div className="container-home">
+        <div className="container">
             <h1>Welcome to the Authentication Project</h1>
             <h2>A cool project to practice the contents learned in Migracode classes.</h2>
             <h3>We've learned about Node.js / API and now bundling with React. </h3>
@@ -28,8 +29,10 @@ function Home() {
             <button onClick={navigateToSignUp}>Sign-up</button>
 
             <Routes>
-                <Route path='login' element={<Login />} />
-                <Route path='sign-up' element={<Sign_up />} />
+                <Route path="/" element={<Layout />}>
+                    <Route path='login' element={<Login />} />
+                    <Route path='sign-up' element={<Sign_up />} />
+                </Route>
             </Routes>
         </div>
     )
