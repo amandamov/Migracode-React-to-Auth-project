@@ -2,15 +2,19 @@ import React, { useState } from "react";
 
 function Login() {    
 
-    const [inputFields, setInputFields] = useState("")
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
-    const handleFormChange = (event) => {
-        setInputFields(event.target.value);
+    const handleEmail = (event) => {
+        setEmail(event.target.value);
     }
 
-    const submitLogin = () => {
-        //take data from handleFormChange
-        console.log("do something to conect")
+    const handlePassword = (event) => {
+        setPassword(event.target.value);
+    }
+
+    function submitLogin() {
+
     }
 
     return (
@@ -24,7 +28,7 @@ function Login() {
                         type="text"
                         name="email"
                         placeholder="Email"
-                        value={inputFields} onChange={handleFormChange}
+                        value={email} onChange={handleEmail}
                     />
                     </div>
                     <h3>Password</h3>
@@ -33,7 +37,7 @@ function Login() {
                         type="text"
                         name="password"
                         placeholder="Password"
-                        value={inputFields} onChange={handleFormChange}
+                        value={value} onChange={handlePassword}
                         />
                     </div>
                     <button onClick={submitLogin}>Enter</button>
